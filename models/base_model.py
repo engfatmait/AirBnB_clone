@@ -4,6 +4,7 @@ Parent class that will inherit
 """
 import uuid
 from datetime import datetime
+import models
 
 
 class BaseModel:
