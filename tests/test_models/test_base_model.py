@@ -2,8 +2,6 @@
 
 """ module of unittests """
 import unittest
-import models
-from models.base_model import BaseModel
 
 
 class BaseModelTests(unittest.TestCase):
