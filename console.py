@@ -16,7 +16,7 @@ class HBNBCommand(cmd.Cmd):
         """
         return True
 
-    def help_quit(self):
+    def help_quit(self, arg):
         """
         help to quit
         """
@@ -26,7 +26,7 @@ class HBNBCommand(cmd.Cmd):
         """
         print white line and exit
         """
-        print()
+        print("")
         return True
 
 
