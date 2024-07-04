@@ -4,11 +4,14 @@
 
 """
 import cmd
+from models.base_model import BaseModel
+from models.engine.file_storage import FileStorage
 
 
 class HBNBCommand(cmd.Cmd):
 
     prompt = "(hbnb)"
+    valid_classes =["BaseModel"]
 
     def do_quit(self, arg):
         """
@@ -33,6 +36,22 @@ class HBNBCommand(cmd.Cmd):
         handle empty line to make nothing
         """
         pass
+    def do_create(self, args):
+        """
+        Creates a new instance of BaseModel, saves it
+        """
+        if len(args) == 0:
+            print("** class name missing **")
+        token = args.split()
+        if token[0] not in self.valid_classes:
+            print("** class doesn't exist **")
+        else:
+            new_instance = BaseModel()
+            new_instance.save()
+            print(new_instance.id)
+
+
+
 
 
 if __name__ == '__main__':
