@@ -16,11 +16,11 @@ class HBNBCommand(cmd.Cmd):
         """
         return True
 
-    def help_quit(self):
+    def help_quit(self, arg):
         """
         help to quit
         """
-        print("Quit command to exit the program\n")
+        print("Quit command to exit the program")
 
     def do_EOF(self, arg):
         """
@@ -28,6 +28,11 @@ class HBNBCommand(cmd.Cmd):
         """
         print("")
         return True
+    def emptyline(self):
+        """
+        handle empty line to make nothing
+        """
+        pass
 
 
 if __name__ == '__main__':
