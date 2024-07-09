@@ -2,7 +2,8 @@
 
 import os
 import json
-from models.base_model import BaseModel 
+from models.base_model import BaseModel
+
 
 class FileStorage:
     """
@@ -44,7 +45,6 @@ class FileStorage:
         if os.path.isfile(FileStorage.__file_path):
             with open(FileStorage.__file_path, "r") as file:
                 try:
-                    
                     obj_dict = json.load(file)
 
                     for key, value in obj_dict.items():
@@ -54,5 +54,3 @@ class FileStorage:
                         filestorage.__objects[key] = instance
                 except Exception:
                     pass
-
-
