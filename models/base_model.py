@@ -4,7 +4,7 @@ Parent class that will inherit
 """
 import uuid
 from datetime import datetime
-import models
+from models import storage
 
 class BaseModel:
     def __init__(self, *args, **kwargs):
@@ -28,6 +28,7 @@ class BaseModel:
         updates the last update time
         """
         self.updated_at = datetime.utcnow()
+        models.storage.save(self)
 
     def to_dict(self):
         """
