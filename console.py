@@ -6,12 +6,13 @@
 import cmd
 from models.base_model import BaseModel
 from models import storage
+from models.user import User
 
 
 class HBNBCommand(cmd.Cmd):
 
     prompt = "(hbnb)"
-    valid_classes =["BaseModel"]
+    valid_classes =["BaseModel", "User"]
 
     def do_quit(self, arg):
         """
@@ -46,8 +47,8 @@ class HBNBCommand(cmd.Cmd):
         elif token[0] not in self.valid_classes:
             print("** class doesn't exist **")
         else:
-            new_instance = BaseModel()
-            new_instance.save()
+            new_instance = eval(f"(token[0])()")
+            storage.save()
             print(new_instance.id)
     def do_show(self, args):
         """
