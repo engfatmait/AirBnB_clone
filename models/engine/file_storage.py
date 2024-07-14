@@ -32,7 +32,7 @@ class FileStorage:
         """
         all_obj = FileStorage.__objects
         obj_dict = {}
-        for obj in all_obj.key():
+        for obj in all_obj.keys():
             obj_dict[obj] = all_obj[obj].to_dict()
 
         with open(FileStorage.__file_path, "w") as file:
