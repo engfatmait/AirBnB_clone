@@ -47,7 +47,7 @@ class HBNBCommand(cmd.Cmd):
         elif token[0] not in self.valid_classes:
             print("** class doesn't exist **")
         else:
-            new_instance = eval(f"(token[0])()")
+            new_instance = eval(f"{token[0]}()")
             storage.save()
             print(new_instance.id)
     def do_show(self, args):
