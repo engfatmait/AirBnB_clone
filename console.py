@@ -80,11 +80,11 @@ class HBNBCommand(cmd.Cmd):
         elif len(obj) < 2:
             print("** instance id missing **")
         else:
-            objects = FileStorage.all()
+            objects = storage.all()
             key = "{}.{}".format(obj[0], obj[1])
             if key in objects:
                 del objects[key]
-                FileStorage.save()
+                storage.save()
             else:
                 print("** no instance found **")
 
